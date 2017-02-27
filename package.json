@@ -7,7 +7,9 @@
     "clean": "rm -rf dist",
     "build": "npm run clean && babel src --out-dir dist",
     "test": "mocha --require babel-polyfill --compilers js:babel-register",
-    "coverage": "babel-node ./node_modules/.bin/isparta cover _mocha"
+    "coverage": "babel-node ./node_modules/.bin/isparta cover _mocha",
+    "version": "npm run build && git add -A dist",
+    "postversion": "git push && git push --tags"
   },
   "author": "",
   "license": "ISC",
