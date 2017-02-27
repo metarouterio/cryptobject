@@ -11,8 +11,8 @@
     "version": "npm run build && git add -A dist",
     "postversion": "git push && git push --tags"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Astronomer Inc",
+  "license": "MIT",
   "dependencies": {
     "crypto-js": "^3.1.5",
     "traverse": "^0.6.6"
