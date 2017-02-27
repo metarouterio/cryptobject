@@ -5,7 +5,7 @@ import curry from "curry";
 export function encrypt(passphrase, obj) {
     return traverse(obj).map(function(item) {
         if (typeof item === "string" && item !== "") {
-            return CryptoJS.AES.encrypt(item, passphrase).toString();
+            this.update(CryptoJS.AES.encrypt(item, passphrase).toString());
         }
     });
 }
@@ -13,7 +13,7 @@ export function encrypt(passphrase, obj) {
 export function decrypt(passphrase, obj) {
     return traverse(obj).map(function(item) {
         if (typeof item === "string" && item !== "") {
-            return CryptoJS.AES.decrypt(item, passphrase).toString(CryptoJS.enc.Utf8);
+            this.update(CryptoJS.AES.decrypt(item, passphrase).toString(CryptoJS.enc.Utf8));
         }
     });
 }
