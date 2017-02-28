@@ -1,6 +1,6 @@
 {
   "name": "cryptobject",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Traverse a given object and encrypt/decrypt the strings with AES.",
   "main": "dist/index.js",
   "scripts": {
