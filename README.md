@@ -1,4 +1,6 @@
 # cryptobject
+[![CircleCI](https://circleci.com/gh/astronomerio/cryptobject.svg?style=svg)](https://circleci.com/gh/astronomerio/cryptobject)
+
 cryptobject provides AES256 encryption to every string value in an object.
 
 # Installation
