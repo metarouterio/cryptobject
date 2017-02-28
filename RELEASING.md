@@ -1,0 +1,2 @@
+- Login to npm with `npm login`
+- Run `npm version x.x.x`
