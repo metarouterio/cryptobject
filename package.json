@@ -4,8 +4,7 @@
   "description": "Traverse a given object and encrypt/decrypt the strings with AES.",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha test",
-    "postversion": "git push && git push --tags"
+    "test": "mocha test"
   },
   "author": "Astronomer Inc",
   "license": "MIT",
