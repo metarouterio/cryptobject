@@ -1,11 +1,8 @@
-import { assert } from 'chai';
-import cryptobject from '../src/index.js';
-const { encryptor, decryptor } = cryptobject;
+const { assert } = require('chai');
+const { encrypt, decrypt } = require('../src/index')('testpass');
 
 describe('cryptobject', function() {
     const passphrase = 'testpass';
-    const encrypt = encryptor(passphrase);
-    const decrypt = decryptor(passphrase);
 
     describe('#encryptor', function() {
         it('encrypts string values in an object', function() {
