@@ -8,13 +8,6 @@ dependencies:
     override:
         - npm install
 
-test:
-    override:
-        - npm run coverage
-    post:
-        - mkdir $CIRCLE_ARTIFACTS/coverage
-        - mv ./coverage $CIRCLE_ARTIFACTS
-
 deployment:
     production:
         # git tags get deployed to npm
