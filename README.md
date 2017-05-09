@@ -4,7 +4,7 @@
 cryptobject provides AES256 encryption to every string value in an object.
 
 # Installation
-`npm i cryptobject`
+`npm install --save cryptobject`
 
 # Usage
 To use cryptobject, simply import the package and call one of `encryptor`
