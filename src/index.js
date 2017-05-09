@@ -1,5 +1,5 @@
-import CryptoJS from "crypto-js";
-import traverse from "traverse";
+const CryptoJS = require('crypto-js');
+const traverse = require('traverse');
 
 /**
  * traverses an object, encrypting each value of string type
@@ -8,8 +8,8 @@ import traverse from "traverse";
  * @param obj the object to encrypt
  * @param ignore a string array of paths to not encrypt
  */
-export function encrypt(passphrase, obj, ignore=[]) {
-    return traverse(obj).map(function(item) {
+function encrypt(passphrase, obj, ignore = []) {
+    return traverse(obj).map(function (item) {
         const path = this.path.join('.');
         const encrypt = !ignore.includes(path);
         if (encrypt && typeof item === "string" && item !== "") {
@@ -18,6 +18,8 @@ export function encrypt(passphrase, obj, ignore=[]) {
     });
 }
 
+module.exports.encrypt = encrypt;
+
 /**
  * traverses an object, decrypting each value of string type
  * using the passphrase
@@ -25,8 +27,8 @@ export function encrypt(passphrase, obj, ignore=[]) {
  * @param obj the object to decrypt
  * @param ignore a string array of paths to not decrypt
  */
-export function decrypt(passphrase, obj, ignore=[]) {
-    return traverse(obj).map(function(item) {
+function decrypt(passphrase, obj, ignore = []) {
+    return traverse(obj).map(function (item) {
         const path = this.path.join('.');
         const decrypt = !ignore.includes(path);
         if (decrypt && typeof item === "string" && item !== "") {
@@ -35,14 +37,13 @@ export function decrypt(passphrase, obj, ignore=[]) {
     });
 }
 
-export default {
-    encryptor(passphrase) {
-        // partially apply encrypt with passphrase
-        return encrypt.bind(null, passphrase);
-    },
+module.exports.decrypt = decrypt;
 
-    decryptor(passphrase) {
+module.exports = function (passphrase) {
+    return {
+        // partially apply encrypt with passphrase
+        encrypt: encrypt.bind(null, passphrase),
         // partially apply decrypt with passphrase
-        return decrypt.bind(null, passphrase);
+        decrypt: decrypt.bind(null, passphrase)
     }
 };
