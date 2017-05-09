@@ -2,7 +2,7 @@
   "name": "@astronomer/cryptobject",
   "version": "2.0.0",
   "description": "Traverse a given object and encrypt/decrypt the strings with AES.",
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "mocha test"
   },
