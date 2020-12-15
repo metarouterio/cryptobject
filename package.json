@@ -1,12 +1,12 @@
 {
-  "name": "@astronomer/cryptobject",
+  "name": "@metarouter/cryptobject",
   "version": "2.0.1",
   "description": "Traverse a given object and encrypt/decrypt the strings with AES.",
   "main": "src/index.js",
   "scripts": {
     "test": "mocha test"
   },
-  "author": "Astronomer Inc",
+  "author": "MetaRouter",
   "license": "MIT",
   "dependencies": {
     "crypto-js": "^3.1.5",
